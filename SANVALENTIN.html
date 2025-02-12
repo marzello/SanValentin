@@ -87,7 +87,13 @@
         }
         .carousel img {
             width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
             display: none;
+        }
+        .carousel img:first-child {
+            display: block;
         }
         .message {
             font-size: 24px;
@@ -104,7 +110,7 @@
            
         </div>
         <div class="buttons">
-            
+           
             <button class="btn no" id="noButton" onmouseover="moveNoButton()">No 😢</button>
         </div>
     </div>
@@ -122,17 +128,18 @@
         function showLove() {
             document.getElementById("content").innerHTML = `
                 <div class="carousel">
-                    <img src="https://previews.dropbox.com/p/thumb/AChrAsxxxi1UfyoCHht55Djk7m23Lp13fMvFm_SYdw5nZ0QoYYUTZ5J93q1FHp6bgv6V41d1gTy1_rs1BwiZ3_fGF1ACO3BjUSGK62fxqxJ0EeYMXM663-ixsTy7i945e77Ql_Ndtu1Mu_iKqggcFQWc452bjBKC16VTAqYTh57mkCNzRBB4gjseuG6brMsNstRkFN9iEBL3QzW6MSGujy0YAcgLeCW2QQuU5Gtz05elmOyByYdtw-eJ_2WLlyMFkdpk8iAqvQy09420z0f6H6AhwsdeeuOEJcN_s1RoaPmpQ7oHTRfs_PBfFZLsFoBJ6s8pG4LxHEIuSfZGZP24jQjb/p.jpeg?is_prewarmed=true" class="active">
-                    <img src="https://previews.dropbox.com/p/thumb/ACjeNH5viNyBoTGQEZSOd1it7LGNOS8KJ32BPc85vgPQvSrB4vbtXeVcI8irAgnN7ew5Y1deAN5CW2xiugFGY6hWkSVVcmkLkkVitr8R0IXfUPUfAXIUKSeS-MCTbyDZOCjXNeyF4IqBwgcxaY1zjf6lahoDGLhfjsJPKCodOZVpQMP8zl9V2vvABYkd2xLscLyG6JGeT8NuaHf0DPq0gqsX8laCQSF_RmynPMJ1xlf3OigZKS1yeKETUDcQnYQnRius0K90qQRPxLrtB3Or-ALFlId8fopMKFINP_7DZMGl6v55Eho8TDZTN6xNLzTeyDPHWbFxA2sYk2YoqbAdYmlk/p.jpeg?is_prewarmed=true">
-                     <img src="https://previews.dropbox.com/p/thumb/ACh9jI3e28521mmK3gN2f1TYM5LrUstKNejSFgD8AftfkNPwYGQgNCd04yQW8pnJWGdC2yrw2uyNXHOqtBwlUzhzHIrpb3B3FB-ruWAmpm24eOewczkkDaWpL_8Bq4FI-ylknnt4uVMBzoNOBUWjB98mBGKL8lpeDBbq1kaRgzVVfrvPuPdOGy2T7brvgASNX8lwFMeCS6eeZCc_JTRFtlaOobaeO72MiFPokrBvPnkCPQPM9zAIfqYeXMIqtyvxzuAh0_9jB35-0QgZDRZnRebV_fgtIgzxfiMZuVxEAK26_Vo0gbezsS7LaTgPNLbowgqE4sMZnLir8xi4WDn4kGCo/p.jpeg?is_prewarmed=true">
-                      <img src="https://previews.dropbox.com/p/thumb/ACi8qSOvgBwRWzoLhQ9aOrAQm2VoEg03CVOc2cIrAcRUJwXCjsszvubk6UHvzUPOAkPD1d18vy_12QoFtNpH--ZyCm6KQ0YWG3JV0QIbISuoOw4kaccS-VA996y1eeBlhKrfbTLTRZDeR0bjPwToO-Qr3YrF7cRN8JR_QWBMBvmyB-H6pzLdtnYwUy5Kur6N37tUZ1_B2s90H08zSLmkqLsYA98qKiASwqNLurmv0TjTHcGon8ZrSk2RBdDFOdNIHLVvayBszdi1zkUKBi6U1aq7oj0G_Y3FY08ZMjgBKshDe8WEzeYJVStxFsRG8LprPq-miAgm3IY7yTCAwSW2pTaq/p.jpeg?is_prewarmed=true">
-                       <img src="https://previews.dropbox.com/p/thumb/ACjUmQ-ozuMyWQtHxQPDryCXyTR8gSAuEK9k6-M2qe9AFTSW3pGET1PRQ5dt-KAG_HDk0LgbHSm_awfxNTnFu1HoSZWGb7Iqx31cH6n7dHGaC6jc6-4Lu1a04vmKiu1VAogm3MBrzlwfV1c70Ojv3tJGcrMfMNMxS_BHxeoEupBsoYmnCVRSJKo-8_5FB9DVV2Pci2sfI5u6QDDxj1z5towhYPOHjxxG9Fo4Ai2ICAmkss8LgVILGKRGojKQiARg53d_nA1GjVaaKkFyrdcdhziAU4UXtRxZ5qSXbUrae_D9AHFCVTAFcBVaIWRFXHboQyRjUCdyvfmIZnrrRSTYhZGg/p.jpeg?is_prewarmed=true">
-                        <img src="https://previews.dropbox.com/p/thumb/ACiZoC91eKkmnzwbs1oRVSxJTqvOovdv70pG2i9i6kHIVgwEm7i3V0CJm_wsdT6lHjhi18FmkLUQSD9fQycb-gczHaJakBgUwqnA5KHBp3ZFAl_G9N4EUgk4eS5OidQPDHUcYv8EOl68Vie-Hc56tgj9Si5K62NcgpzU-LdMcE1cU8APemj87VebbhygdptpZ2kw7hH46TgIWmmvQf5Ki_QrL4m4IQbq5Uk6v1QlXQoqym5yC3Uz0LtSCW9YO0G84GB1Tdt6nLpCv9WCZ7gy0mlapGLfNwRNoq3SzTpWNkWX99i_1JBLSQjxwpIh431jVuVoZAMqvkaG2GxGXe_djJJo/p.jpeg?is_prewarmed=true">
-                         <img src="https://previews.dropbox.com/p/thumb/ACg8LSCD6QNJxGq18iomt5R1V-Rqyjw0tX5_X1JuGOeTeCAicUFdwTrrnY05wFjLOYNcjNDTjyVw8ExWkYSugX_KvGpgON42pgoXvW7IN-xvbOS-5r1c8A0VJUwV1HKwPi4ibDJT8qN2mM495Wueu_xzOf_n77gaqwvLdHcpIIZZofxj_oDiYhJkNFQiUWZsRdN_H6WjONes6v-m7dghttTakPA-MQo9DPxd-1k78_RPdmdtWz9eFZ0t_kctbH7VCOPJ_iKNt33-poNKeZ79eCregO2JaxQfCseQ2l3RsouaKa6FYv3ve1Ra3yLMW_JD9Pc1OoUQlV6hJSK95ZB_pRrr/p.jpeg?is_prewarmed=true">
-                          <img src="https://previews.dropbox.com/p/thumb/ACjIVMeDy5s-8-7f85yljjNDn2eyyxtK0qfTZCZKKm79Jsm5FcR2xdz41OTZ989zQx6vV-Emxjc9Okt7EIJfubKrdFqjTLs3pWnYKcjuexcOYh5_SV8ZQAvu7XjTPVfPmU8znDXhE6d6WncRrhVDdr9Q0oEF6Npr72IE80HYbX1EUi0-XoQ5yV2SicAuq6mYWDw4hIl74bWaaWRqipMTEsKyeM4GH0ZW7YyjhlAAYJ2jgXWLVXGnBbYdVLmqqpP7UCgV0KyDqJzSKcW0rRIQglS5L3uJJcbfrS3kPaZr53JD6f-Uj-bOaOUKMljVb3TYeppgD1tpOn_FccrotlNiqgwK/p.jpeg?is_prewarmed=true">
-                           <img src="https://previews.dropbox.com/p/thumb/ACgGFlqn3gAmdEcWCr09SON1zNBOr2ADsvEX5iuXkCE9jg-vw20A6zxmR9vJrgaBPCT-PNPmCqqPNI5tVNF6MEfhDAxqSf6G_vetxgq2HX_EbqOOSRKFWEQnyH4r7t5YG6BmTg4EJ9YayQd3H5t1rV3QkSr2UaCGqiDIIsRzjq3d_Dsa_vqiLgWORB3jrePt6W0NZyhdmYfSYOE8bTk5g6Bu79Red9iVj49q0WsZipRCEcp-_CzIGdMiFw0r4eYMh2sIvwyuyLxYV65cW9q65FLaq7UlUz-XHX00bKgwUtHjv9-LGl5tV8KnVL8pW5CwVudjmh_jGY1zyyU-iJAZGqR4/p.jpeg?is_prewarmed=true">
-                            <img src="https://previews.dropbox.com/p/thumb/AChIV6PTLN52UrtNlrh0t92wTgr8XdAoM8ot-BPWU-3bDF3JmQ2LnaTQocwObJ33_BO_WCPgOD3SgE367iv6voTV9SUwXeQALysRcCwU_qifl0-laXJ8EIIY7NbNPjwtPGYTJFrDwmQWPx9vxFPJhizUJdrBR76nc54NPvVGcfe6aoSB0bVZAdBKdxmnn9WDTzdJlaOHSOUZntZhhMPMBKd0SwmZWoVU_kOLpCOCVOemVIpbglGGbVwHwQris7b5gvA-CuCUYtCK5nOOMiiwKbbrI5m0aMeE3qZBsGcHLlQL2K_I5l3qipQB1b9u-UatiCd4HbdM5_u-rb6tLb7n_r8z/p.jpeg?is_prewarmed=true">
-                             <img src="https://previews.dropbox.com/p/thumb/AChu20SsktqMP2MCvw2j5MSGwvfTw1mw1ucE3x35J8rYWzymSv3kNrOkItnvSLB9HNiAPc3bzjWB4GSvi7Y4cKjqeQQ0J8aSo4DTxOGgDR-geL13hBXfWJATkHrG2IOXJ8eTlCfONJK0ZXyh_mwKMgHDqHI7MowHGkXAb91I73evQ1SWlMP6kHJ-GNXqWKv-0QN7a_Lp1Mes03xpaUgHBsA3yS7-byTDf0N4Nkk6CyD2qJXlozoeJTYLs7tPM11PZFF5rMuLJRWUX4c906fklY5uMqYVj2pOPQxTPi29wmBWHIFfhHfXlhu39ZpeRE-qv_C6g9AxsctyUrvb6KeUseW9/p.jpeg?is_prewarmed=true">
+                   <img src="https://www.dropbox.com/scl/fi/jerrwlcltaiyfisv6lpey/IMG-20231027-WA0014.jpg?rlkey=azifngdiueubvlcszq56dkqpw&raw=1">
+
+                    <img src="https://www.dropbox.com/scl/fi/609v9bdltx2tabpp2zw6c/IMG-20230927-WA0011.jpg?rlkey=ydxe3ox82mz86k4jamrbu3kyo&raw=1">
+                    <img src="https://www.dropbox.com/scl/fi/mkh7ud7dahj2i9ud04w6r/IMG-20230922-WA0000.jpeg?rlkey=mh3amq0ua2mmiezibjt97m5g3&raw=1">
+                    <img src="https://www.dropbox.com/scl/fi/5d5r4nzg282n6jz4kqx3x/IMG_20241026_193210.jpg?rlkey=4mi3bm4jgv3cqajgydosf154m&raw=1">
+                    <img src="https://www.dropbox.com/scl/fi/wv7nc0z6t2m1e4j16fkgu/IMG_20241026_192420.jpg?rlkey=gy9vf8u9ekob6w6xed69gvk2z&raw=1">
+                    <img src="https://www.dropbox.com/scl/fi/8z9jt9zykxaf8anif3dul/IMG_20241026_192034.jpg?rlkey=byu0cv1ynql7d06vahm99i05l&raw=1">
+                    <img src="https://www.dropbox.com/scl/fi/abauozz21t8gh6becwkrq/IMG_20240329_205054.jpg?rlkey=0af0lsjapd41jdd3epnfanhmm&raw=1">
+                    <img src="https://www.dropbox.com/scl/fi/wzmfawiq18vmnw6eehv3v/IMG_20231209_171113.jpg?rlkey=we4uvf1bqakmjjtri9l5icz0z&raw=1">
+                    <img src="https://www.dropbox.com/scl/fi/fuw85b9xfsis0vh3uvuiv/IMG_20231209_170913.jpg?rlkey=nkidzhljkeunfz5wc982klhzn&raw=1">
+                    <img src="https://www.dropbox.com/scl/fi/0t71pjmv6nthv5lp8zbmr/IMG_20230927_161540.jpg?rlkey=8dgcdabjz4h2e071y9rcjuwho&raw=1">
+                    <img src="https://www.dropbox.com/scl/fi/vk6nhxirlkluhqvpkbfb8/IMG_20230811_213904.jpg?rlkey=zm7kvoqeqpch1fgx8vjxncpwc&raw=1">
                 </div>
                 <div class="message">¡Sabía que dirías que sí! 💖🥰</div>
             `;
